@@ -5,9 +5,12 @@
 
 1.GitHub 是为开发者提供 Git 仓库的托管服务。这是一个让开发者与
 朋友、同事、同学及陌生人共享代码的完美场所
+
 2.在 Git 中，开发者将源代码存入名叫“Git 仓库”的资料库中
 并加以使用。而 GitHub 则是在网络上提供 Git 仓库的一项服务
+
 3.Pull Request 是指开发者在本地对源代码进行更改后，向 GitHub 中托管的 Git 仓库请求合并的功能。
+
 4.GitHub 快捷的环境为开发者带来的合作伙伴，并不只局限于自己团队内部。只要将感兴趣的仓库添加至 Watch 中，就可以在 News Feed 查看该仓库的相关信息
 
 ## Git的导入
@@ -68,24 +71,41 @@ id_rsa 文件是私有密钥，id_rsa.pub 是公开密钥
 1.Follow别人
 2.创建仓库
 (1)New repository
+
 (2)初始设置
+
 在 Repository name 栏中输入仓库的名称
+
 Description 栏中可以设置仓库的说明。这一栏不是必需项，可以留空。
+
 在 Initialize this repository with a README 选项上打钩，随后GitHub 会自动初始化仓库并设置 README 文件，让用户可以立刻clone 这个仓库。如果想向 GitHub 添加手中已有的 Git 仓库，建议不要
 勾选，直接手动 push
+
 (3)README
+
 README.md 在初始化时已经生成好了。README.md 文件的内容会自动显示在仓库的首页当中
+
 3.公开代码
+
 (1)clone已有的代码
+
 $ git clone -----------(此处填写ssh clone URL)
 
 此时会被要求输入自己的密码
+
 然后就可以把存储在github上的仓库克隆到自己这里
+
 (2)自己把一份文件拉倒自己的仓库地址
+
 然后输入git status查看状态
-显示untracked files
+
 
 使用git add +文件名称（需要后缀）-------加入缓存区
+
 使用git commit -m "加入自己关于这次更新的解释"------提交文件
+
 使用git log查看提交日志
+
 使用git push更新github上的仓库
+
+## 深入使用git
