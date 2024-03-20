@@ -49,10 +49,6 @@ Git和其他版本控制系统：SSH密钥对也可以用于身份验证，允�
 
 安全文件传输：SSH密钥对也可以用于加密和解密文件的传输，保证数据的安全性。
 
-个人私钥密码：github
-公钥指纹：laeiVUh4qK/+d0VupemlAVHXQhGaRm/TwE3txJ9KQrk （rsa）
-SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU（ED255519）
-
 id_rsa 文件是私有密钥，id_rsa.pub 是公开密钥
 
 当你第一次通过SSH连接到一个新的主机时，你的SSH客户端会询问你是否信任这个新的主机 这是因为SSH客户端无法确定这个新的主机是否是你期望连接的那个主机，还是一个试图冒充你期望连接的主机的恶意主机。
