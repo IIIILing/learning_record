@@ -185,8 +185,8 @@ git diff HEAD命令，查看本次提交与上次提交之间有什么差别，�
 **git checkout -b <分支名字>**
 
 实际上，连续执行两条命令也能收到同样的效果：
-**$git branch <name**
-$git checkout <name-------创建A分支同时切换到A分支下
+**$git branch <name>**
+$git checkout <name> ------创建A分支同时切换到A分支下
 
 不断对分支的操作，我们叫做“培育分支”
 git checkout name---可以切换到想要的分支
