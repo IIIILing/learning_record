@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Blog</title>
+    <style>
+        /* CSS 样式 */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #666;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 20px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ff7f50;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .article {
+            flex: 0 0 calc(66.666% - 20px);
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .article:hover {
+            transform: translateY(-5px);
+        }
+
+        .article h2 {
+            margin-top: 0;
+        }
+
+        .sidebar {
+            flex: 0 0 calc(33.333% - 20px);
+            background-color: #ddd;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .sidebar h3 {
+            margin-top: 0;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>My Interactive Blog</h1>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Articles</a>
+    <a href="#">About</a>
+</nav>
+
+<main>
+    <div class="article" onclick="location.href='#'">
+        <h2>Article Title 1</h2>
+        <p>Published on January 1, 2024</p>
+        <p>This is the content of the first article. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.</p>
+    </div>
+
+    <div class="article" onclick="location.href='#'">
+        <h2>Article Title 2</h2>
+        <p>Published on January 2, 2024</p>
+        <p>This is the content of the second article. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.</p>
+    </div>
+
+    <div class="article" onclick="location.href='#'">
+        <h2>Article Title 3</h2>
+        <p>Published on January 3, 2024</p>
+        <p>This is the content of the third article. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.</p>
+    </div>
+
+    <div class="sidebar">
+        <h3>About Me</h3>
+        <p>Welcome to my blog! I am a passionate writer and love to share my thoughts with the world.</p>
+        <h3>Popular Articles</h3>
+        <ul>
+            <li><a href="#">Article Title 1</a></li>
+            <li><a href="#">Article Title 2</a></li>
+            <li><a href="#">Article Title 3</a></li>
+        </ul>
+    </div>
+</main>
+
+<footer>
+    &copy; 2024 My Interactive Blog. All rights reserved.
+</footer>
+
+</body>
+</html>
