@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robot Battle UI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0ebeb;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .battle-container {
+            width: 400px;
+            text-align: center;
+        }
+
+        .robot {
+            margin-bottom: 20px;
+        }
+
+        .robot-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .health-bar {
+            background-color: #ddd;
+            height: 10px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .health-bar-inner {
+            background-color: #4caf50; /* 默认血条颜色 */
+            height: 100%;
+        }
+
+        .damage {
+            background-color: #f44336; /* 受伤血条颜色 */
+        }
+    </style>
+</head>
+<body>
+
+<div class="battle-container">
+    <div class="robot">
+        <div class="robot-name">Robot A</div>
+        <div class="health-bar">
+            <div class="health-bar-inner" style="width: 10%;"></div>
+        </div>
+    </div>
+
+    <div class="robot">
+        <div class="robot-name">Robot B</div>
+        <div class="health-bar">
+            <div class="health-bar-inner" style="width: 100%;"></div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
