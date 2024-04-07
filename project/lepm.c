@@ -123,8 +123,6 @@ int main() {
     printf("您的总得分是: %lf\n", total_score);
     return 0;
 }
-    return 0;
-}
 
 double sleeptime(int hour1, int min1, int hour2, int min2) {
     // 计算睡眠时间，以小时为单位
