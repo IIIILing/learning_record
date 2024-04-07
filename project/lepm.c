@@ -22,7 +22,7 @@ int main() {
     } else if (before_sleep == 2) {
         sleeptime1 -= 30;
     } else {
-        sleeptime1 -= 0;
+        sleeptime1-= 0;
     }
 
     // 获取睡眠质量评分
@@ -40,8 +40,89 @@ int main() {
     final_score = sleep_score(sleeptime1, sleep_grade1);
 
     // 输出最终得分
-    printf("您的最终睡眠得分是: %.2lf\n", final_score);
+    printf("您的最终睡眠得分是: %lf\n", final_score);
 
+    //获得自习时的各项数据：自习时长，看手机几次，写了多少题目，有无订正，是否预习，预习是在听课还是在看书本，是否有课后作业，
+    int study_hour, study_app, study_write, study_correct, study_pre, study_listen, study_homework, study_homework_score;
+    printf("请输入自习时长（单位：小时）: ");
+    scanf("%d", &study_hour);
+    printf("今天在看手机几次? (输入次数): ");
+    scanf("%d", &study_app);
+    printf("今天写了多少题目? (输入题目数): ");
+    scanf("%d", &study_write);
+    printf("今天有无订正? (有输入1, 无输入2): ");
+    scanf("%d", &study_correct);
+    printf("今天是否预习? (是输入1, 否输入2): ");
+    scanf("%d", &study_pre);
+    printf("今天预习是在听课还是在看书本? (听课输入1, 看书本输入2): ");
+    scanf("%d", &study_listen);
+    printf("今天有无课后作业? (有输入1, 无输入2): ");
+    scanf("%d", &study_homework);
+    if (study_homework == 1) {
+        printf("请输入作业分数: ");
+        scanf("%d", &study_homework_score);
+    }
+    // 计算自习得分
+    double study_score = 0.0;
+    study_score = study_hour * 10 + study_app * 5 + study_write * 10 + study_correct * 5 + study_pre * 5 + study_listen * 5;
+    if (study_homework == 1) {
+        study_score += study_homework_score * 20;
+    }
+    printf("您的自习得分是: %lf\n", study_score);
+    /*获取自己上课玩手机次数，是否记笔记，是否认真听讲，是否在课上有pre，是否需要回看智云，是否理解所有课堂例题。计算自己上课的效率，并输出*/
+    int play_phone, note_book, listen_lecture, pre_in_class, review_ziyun, understand_example;
+    printf("您上课玩手机次数: ");
+    scanf("%d", &play_phone);
+    printf("您是否记笔记? (记笔记输入1, 不记笔记输入2): ");
+    scanf("%d", &note_book);
+    printf("您是否认真听讲? (认真听讲输入1, 不认真听讲输入2): ");
+    scanf("%d", &listen_lecture);
+    printf("您是否在课上有pre? (有pre输入1, 没有pre输入2): ");
+    scanf("%d", &pre_in_class);
+    printf("您是否需要回看智云? (需要回看输入1, 不需要回看输入2): ");
+    scanf("%d", &review_ziyun);
+    printf("您是否理解所有课堂例题? (理解所有课堂例题输入1, 不理解所有课堂例题输入2): ");
+    scanf("%d", &understand_example);
+    // 计算自习得分
+    double play_score = 0.0;
+    play_score = play_phone * 10 + note_book * 5 + listen_lecture * 10 + pre_in_class * 5 + review_ziyun * 5 + understand_example * 5;
+    printf("您的上课玩手机得分是: %lf\n", play_score);
+    /*计算自己运动对身体的影响，需要做到每天督促自己跑3-5km，或者打篮球1h，或者练习速耐但是不过度劳累的状态，并输出自己的运动得分*/
+    int run_km, play_ball, exercise_state;
+    printf("您每天跑几公里? (输入公里数): ");
+    scanf("%d", &run_km);
+    printf("您每天打篮球几小时? (输入小时数): ");
+    scanf("%d", &play_ball);
+    printf("是否练习速度耐力? (输入状态): ");
+    scanf("%d", &exercise_state);
+    // 计算运动得分
+    double exercise_score = 0.0;
+    // 这里的条件判断应该是run_km >= 3 && run_km <= 5 || play_ball >= 1 || exercise_state == 1 如果出现两个条件同时成立的情况，还要倒扣分
+    //如果跑步到10km以上则discount = 0.8，如果跑步不到10km则discount = 1.0
+    //打篮球如果心情愉悦的话，可以适当加分（进行if判断）
+    //如果跑步3km，又进行打篮球，那么需要扣分较多
+
+    if (run_km >= 10) {
+        exercise_score = 100.0;
+    } else if (run_km >= 3) {
+        exercise_score = 80.0;
+    } else {
+        exercise_score = 60.0;
+    }
+    if (play_ball >= 1) {
+        exercise_score += 20.0;
+    }
+    if (exercise_state == 1) {
+        exercise_score -= 20.0;
+    }
+
+    printf("您的运动得分是: %lf\n", exercise_score);
+    // 计算总分，给出study_score，play_score，exercise_score的权重
+    //study_score权重最高，play_score次之，exercise_score最低
+    double total_score = study_score * 0.5 + play_score * 0.3 + exercise_score * 0.2;
+    printf("您的总得分是: %lf\n", total_score);
+    return 0;
+}
     return 0;
 }
 
