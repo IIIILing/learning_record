@@ -97,13 +97,7 @@ int main() {
     } else {
         printf("您没有上课，不计算上课得分。\n");
     }
-    /*计算自己运动对身体的影响，需要做到每天督促自己跑3-5km，或者打篮球1h，或者练习速耐但是不过度劳累的状态，并输出自己的运动得分*/
-    
-    // 这里的条件判断应该是run_km >= 3 && run_km <= 5 || play_ball >= 1 || exercise_state == 1 如果出现两个条件同时成立的情况，还要倒扣分
-    //如果跑步到10km以上则discount = 0.8，如果跑步不到10km则discount = 1.0
-    //打篮球如果心情愉悦的话，可以适当加分（进行if判断）
-    //如果跑步3km，又进行打篮球，那么需要扣分较多
-    //如果跑步3km，又进行练习，那么需要扣分较多
+
     int run_km, play_ball, exercise_state;
     printf("请输入您今天跑了多少公里? (单位：公里): ");
     scanf("%d", &run_km);
@@ -140,8 +134,11 @@ int main() {
     printf("您的运动得分是: %lf\n", exercise_score);
     // 计算总分，给出study_score，play_score，exercise_score的权重
     //study_score权重最高，play_score次之，exercise_score最低
+
     double total_score = study_score * 0.5 + play_score* 0.2 + exercise_score * 0.3;
     printf("您的总得分是: %lf\n", total_score);
+    //按任意键退出
+    getchar();
     return 0;
 }
 
